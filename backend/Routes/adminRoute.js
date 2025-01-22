@@ -24,8 +24,8 @@ const taskSchema = new mongoose.Schema({
         default:'medium'
     },
     createdAt :{
-        type : String,
-        
+        type : Date,
+        default : Date.now
     }
 });
 
@@ -131,7 +131,8 @@ route.put('/updateTask/:id', async (req, res) => {
             },
             { new: true }
         );
-
+        await updatedTask.save();
+        
         if (!updatedTask) {
             return res.status(404).json({ message: "Task not found" });
         }

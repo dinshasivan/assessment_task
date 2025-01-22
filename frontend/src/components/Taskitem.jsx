@@ -107,6 +107,7 @@ const Taskitem = () => {
               className="w-full p-2 border rounded"
             >
               <option value="pending">Pending</option>
+              <option value="In-Progress">In-Progress</option>
               <option value="completed">Completed</option>
             </select>
           </div>
